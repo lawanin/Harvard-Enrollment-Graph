@@ -1,0 +1,26 @@
+---
+title: "Class-02-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(primer.data)
+library(readxl)
+enrollment <- read_excel("raw_data/class_enrollment_summary_by_term_2-10-2021.xlsx", 
+                         skip = 3)
+
+```
+
+```{r}
+enrollment %>%
+  group_by(`Instructor Full Name`) %>%
+  summarize(total_by_teacher = sum(Total), na.rm = TRUE, .groups = "keep") %>%
+  arrange(desc(total_by_teacher)) %>%
+  slice(1:10)
+
+
+
+```
+

@@ -17,9 +17,6 @@ enrollment <- read_excel("raw_data/class_enrollment_summary_by_term_2-10-2021.xl
                          skip = 3)
 ```
 
-```{r}
-```
-
 
 ```{r}
 enrollment_p <- enrollment %>%
